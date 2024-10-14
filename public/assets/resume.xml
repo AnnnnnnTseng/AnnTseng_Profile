@@ -1,0 +1,234 @@
+<resumeList>
+	<experience>
+		<type>Education</type>
+		<title>Master of Science in Software Development</title>
+		<subtitle>Boston University (Boston, MA)</subtitle>
+		<detail>Selected Courses: Database Design and Implementation for Business, Information Structures with Python, Software Design and Patterns, Rich Internet Application Development. GPA: 3.8/4.0</detail>
+	</experience>
+	<experience>
+		<type>Education</type>
+		<title>Master of Music</title>
+		<subtitle>University of Illinois at Urbana Champaign (Champaign, IL)</subtitle>
+		<detail>GPA: 3.95/4.0</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Programming Languages</title>
+		<subtitle></subtitle>
+		<detail>Python</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Programming Languages</title>
+		<subtitle></subtitle>
+		<detail>JavaScript</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Programming Languages</title>
+		<subtitle></subtitle>
+		<detail>Java</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Programming Languages</title>
+		<subtitle></subtitle>
+		<detail>Typescript</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Programming Languages</title>
+		<subtitle></subtitle>
+		<detail>C++</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Programming Languages</title>
+		<subtitle></subtitle>
+		<detail>R</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Programming Languages</title>
+		<subtitle></subtitle>
+		<detail>R</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Frameworks and Libraries</title>
+		<subtitle></subtitle>
+		<detail>Express.js</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Frameworks and Libraries</title>
+		<subtitle></subtitle>
+		<detail>Node.js</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Frameworks and Libraries</title>
+		<subtitle></subtitle>
+		<detail>Svelte</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Frameworks and Libraries</title>
+		<subtitle></subtitle>
+		<detail>Bootstrap</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Frameworks and Libraries</title>
+		<subtitle></subtitle>
+		<detail>React</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Frameworks and Libraries</title>
+		<subtitle></subtitle>
+		<detail>Ionic</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Frameworks and Libraries</title>
+		<subtitle></subtitle>
+		<detail>Angular</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Database and Cloud services</title>
+		<subtitle></subtitle>
+		<detail>PostgreSQL</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Database and Cloud services</title>
+		<subtitle></subtitle>
+		<detail>MongoDB</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Database and Cloud services</title>
+		<subtitle></subtitle>
+		<detail>Firestore</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Database and Cloud services</title>
+		<subtitle></subtitle>
+		<detail>MySQL</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Database and Cloud services</title>
+		<subtitle></subtitle>
+		<detail>SQLite</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Database and Cloud services</title>
+		<subtitle></subtitle>
+		<detail>Google Cloud Platform (GCP)</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Database and Cloud services</title>
+		<subtitle></subtitle>
+		<detail>Heroku</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Database and Cloud services</title>
+		<subtitle></subtitle>
+		<detail>Firebase</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Tools and Others </title>
+		<subtitle></subtitle>
+		<detail>Git</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Tools and Others </title>
+		<subtitle></subtitle>
+		<detail>Tailwind</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Tools and Others </title>
+		<subtitle></subtitle>
+		<detail>pgAdmin</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Tools and Others </title>
+		<subtitle></subtitle>
+		<detail>Selenium</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Tools and Others </title>
+		<subtitle></subtitle>
+		<detail>ChromeDriver</detail>
+	</experience>
+	<experience>
+		<type>Skills</type>
+		<title>Tools and Others </title>
+		<subtitle></subtitle>
+		<detail>IDEs (PyCharm, VS code, Jupytor, IntelliJ) </detail>
+	</experience>
+	<experience>
+		<type>Work Experiences</type>
+		<title>Full-Stack Web Developer </title>
+		<subtitle>Tong-Yi Driving School</subtitle>
+		<detail>Build a web app for a local driving school business in Taiwan with 1,000+ new customers annually.</detail>
+		<link>https://tongyidrivingschool.com/</link>
+		<detail>1. Ownership: Took ownership of the front-end layout user interface for the web app and self-learned Svelte and Tailwind from online courses.</detail>
+		<detail>2. Backend Design: Maintained and participated in backend database designs using NoSQL on Firebase.</detail>
+		<detail>3. Skills: Node.js / TypeScript(Svelte) / Firebase / GCPWeb App</detail>
+	</experience>
+	<experience>
+		<type>Work Experiences</type>
+		<title>Graduate Teaching Assistant </title>
+		<subtitle>University of Illinois Urbana-Champaign</subtitle>
+		<detail>Improved student performance and critical thinking by tailoring group and individual lessons to address specific challenges.</detail>
+		<detail>Achieved consistent sell-outs and near-full attendance by coordinating with faculty and musicians to orchestrate successful concerts.</detail>
+	</experience>
+	<experience>
+		<type>Projects</type>
+		<title>Campground Explorer</title>
+		<subtitle>FULL STACK WEB APP</subtitle>
+		<link>https://github.com/AnnnnnnTseng/Feb23‐yelpcamp</link>
+		<detail>Implemented responsive front-end design with Bootstrap, EJS, HTML, CSS, Typescript, and React for consistent user experience across devices.</detail>
+		<detail>Engineered a resilient backend with Node.js, Express, and Passport.js (authentication library), integrating security measures that reduced response time and vulnerabilities.</detail>
+		<detail>Deployed on Heroku and leveraged MongoDB Atlas Cloud, using MongoDB, Node.js, and Express to ensure robust and scalable data storage.</detail>
+	</experience>
+	<experience>
+		<type>Projects</type>
+		<title>Lululemon Web Scraper</title>
+		<subtitle>Backend App</subtitle>
+		<link>https://github.com/AnnnnnnTseng/web-scraper-lululemon</link>
+		<detail>Saved users 95\% of the time previously spent on manual searches by engineering a web scraper with Python, Selenium, and Chromedriver to retrieve data from the Lululemon webpage efficiently.</detail>
+		<detail>Implemented backend with Python to allow efficient searching and filtering of items based on keywords or product names.</detail>
+		<detail>Open-sourced the project on GitHub, providing a time-saving solution for users and encouraging collaboration within the developer community.</detail>
+	</experience>
+	<experience>
+		<type>Projects</type>
+		<title>Pets Simulator Game</title>
+		<subtitle>Backend App</subtitle>
+		<link>https://github.com/AnnnnnnTseng/Game-Pets-Simulator</link>
+		<detail>Developed concurrent mechanisms with Java threading, enabling interactions with multiple pets simultaneously to enhance gaming experience.</detail>
+		<detail>Optimized data management by integrating SQLite for storing and retrieving game data, ensuring robust data handling.</detail>
+		<detail>Leveraged AI to automate tasks, improve code quality, provide intelligent insights, and enhance development efficiency and app functionality..</detail>
+	</experience>
+	<experience>
+		<type>Projects</type>
+		<title>Class Registration System</title>
+		<subtitle>Database App</subtitle>
+		<detail>Built a scalable PostgreSQL database for a 1,000-user course system using Lucidchart for database design, optimizing performance and scalability.</detail>
+		<detail>Improved query performance by 25\% through comprehensive data modeling, normalization, and validation processes, reducing data redundancy by 30\% to enhance overall database efficiency.</detail>
+		<detail>Utilized SQL expertise to accelerate data processing and craft insightful queries, transforming them into impactful data visualizations to inform business decisions.</detail>
+	</experience>
+</resumeList>

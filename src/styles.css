@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+img {
+    overflow: visible !important;
+    max-width: 50% !important; /* Ensure the image is responsive */
+    height: auto !important;    /* Maintain aspect ratio */
+  }
+
+thumbnail-img {
+  max-width: 150px;  /* Adjust this to the desired thumbnail size */
+  height: auto;      /* Maintain the aspect ratio */
+}
+
+body {
+  background: #F0F8FF
+}

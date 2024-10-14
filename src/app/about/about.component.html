@@ -1,0 +1,86 @@
+<h1>About Ann</h1>
+
+
+<!-- Search bar  -->
+
+<h2>Search Skills</h2>
+<div class="search">
+    <input type="text" placeholder="Search for skills..." [(ngModel)]="skill" #filter>
+    <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+</div>
+<ul>
+    <li *ngFor="let skill of filteredSkillList">
+        {{skill.name}}
+
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let skill of skills">
+        {{skill.name}}
+
+    </li>
+</ul>
+
+<h2>Skills</h2>
+<ul>
+    <li>Programming Languages: Python, JavaScript, Java, Typescript, C++, R</li>
+    <li>Frameworks & Libraries: Express.js, node.js, Svelte, Bootstrap, React, Ionic, AngularJS</li>
+    <li>Database & Cloud services: PostgreSQL, MongoDB, Firestore, MySQL, SQLite, Google Cloud Platform (GCP), Heroku, Firebase</li>
+    <li>Tools & Others: Git, Tailwind, pgAdmin, Selenium, ChromeDriver, IDEs (PyCharm, VS code, Jupytor, IntelliJ)</li>
+    
+</ul>
+<br>
+<br>
+<h2>Work Experience</h2>
+<ul>
+    <li>
+        Full-Stack Web Developer - Tong‐Yi Driving School
+        <a href="https://tongyidrivingschool.com">Link</a>
+        
+        <ul>1. Built a full‐stack web application for a Taiwanese driving school that attracts and enhances 1000+ real customers online experience annually using Svelte, TypeScript and CSS.</ul>
+        <ul>2. Saving 50% of weekly administrative time by automating administrative tasks with Google Cloud Runand Firestore.</ul>
+        <ul>3. Enhanced app performance by 30% using Firebase for real‐time data synchronization and efficient data management.</ul>
+    </li>
+    <br>
+    <li>
+        Graduate Teaching Assistant - University of Illinois at Urbana Champaign, School of Music
+        <ul>Improved student performance and critical thinking by tailoring groupand individual lessons to address specific challenges.</ul>
+
+    </li>
+</ul>
+
+
+
+
+
+
+
+
+<!-- Test Resume XML -->
+<h1>Test Resume XML</h1>
+<div class="container">
+    <h2>Experience List</h2>
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Title</th>
+          <th>Subtitle</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.type[0] }}</td> <!-- Display the experience type -->
+          <td>{{ item.title[0] }}</td> <!-- Display the title -->
+          <td>{{ item.subtitle[0] }}</td> <!-- Display the subtitle -->
+          <td>
+            <!-- Use ngFor if there are multiple details -->
+            <ul>
+              <li *ngFor="let detail of item.detail">{{ detail }}</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
