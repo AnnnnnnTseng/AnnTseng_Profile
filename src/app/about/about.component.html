@@ -1,27 +1,223 @@
-<h1>About Ann</h1>
-
-
-<!-- Search bar  -->
-
-<h2>Search Skills</h2>
-<div class="search">
-    <input type="text" placeholder="Search for skills..." [(ngModel)]="skill" #filter>
-    <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+<!-- About Ann Title -->
+<!-- <h1 class="display-1">About Ann</h1> -->
+<br><br>
+<!--Search input box and button -->
+<div class="row justify-content-center">
+    <div class="col-md-6 col-sm-8">
+        <div class="input-group">
+            <br>
+            <input type="search" class="form-control rounded custom-border" placeholder="Search Ann's resume (GPA, Programming Languages)..." aria-label="Search" aria-describedby="search-addon" [(ngModel)]="skill" #filter>
+            <button data-mdb-ripple-init class="btn btn-outline-primary" type="button" (click)="filterResults(filter.value)">Search</button>
+        </div>
+    </div>
 </div>
-<ul>
-    <li *ngFor="let skill of filteredSkillList">
-        {{skill.name}}
 
-    </li>
-</ul>
-<ul>
-    <li *ngFor="let skill of skills">
-        {{skill.name}}
+<br>
 
-    </li>
-</ul>
+<!-- tables in black -->
+<section class="intro">
+    <div class="bg-image h-100" style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/tables/img2.jpg');">
+        <div class="mask d-flex align-items-center h-100" style="background-color: #FFFFFF;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
 
-<h2>Skills</h2>
+                        <!-- Search Result box card, show only when search clicked -->
+                        <div class="card bg-dark shadow-2-strong" *ngIf="searchTriggered">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div class="container">
+                                        <h2 class="text-white">Search Result</h2>
+                                        <!-- Show only when there are results matched. -->
+                                        <table class="table table-condensed table-dark table-borderless mb-0" *ngIf="items.length > 0; else noResults">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Type</th>
+                                                    <th scope="col">Title</th>
+                                                    <th scope="col">Subtitle</th>
+                                                    <th scope="col">Details</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr scope="row" *ngFor="let item of items">
+                                                    <td>{{ item.type[0] }}</td>
+                                                    <td>{{ item.title[0] }}</td>
+                                                    <td>{{ item.subtitle[0] }}</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li *ngFor="let detail of item.detail">{{ detail }}</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- Show when no result matched. -->
+                                        <ng-template #noResults>
+                                            <p class="text-white">No match found. Check Ann's <a href="https://github.com/AnnnnnnTseng">GitHub</a>.</p>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br><br><br>
+
+                        <!-- Skill box card -->
+                        <div class="card bg-dark shadow-2-strong">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div class="container">
+                                        <h2 class="text-white">Skills</h2>
+                                        <table class="table table-condensed table-dark table-borderless mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Category</th>
+                                                    <th scope="col">Skills</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr scope="row" *ngFor="let skillGroup of (skillCategories | keyvalue)">
+                                                    <td>{{skillGroup.key}}</td>
+                                                    <td>{{skillGroup.value}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br><br><br>
+                        <!-- Education box card -->
+                        <div class="card bg-dark shadow-2-strong">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div class="container">
+                                        <div *ngIf="groupedItems['Education']">
+                                            <h2 class="text-white">Education</h2>
+                                            <table class="table table-condensed table-dark table-borderless mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">School</th>
+                                                    <th scope="col">Location</th>
+                                                    <th scope="col">Details</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr scope="row" *ngFor="let item of groupedItems['Education']">
+                                                    <td>{{ item.title[0] }}</td>
+                                                    <td>{{ item.subtitle[0] }}</td>
+                                                    <td>
+                                                    <ul>
+                                                        <li *ngFor="let detail of item.detail">{{ detail }}</li>
+                                                    </ul>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br><br><br>
+
+                        <!-- Work box card -->
+                        <div class="card bg-dark shadow-2-strong">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div class="container">
+                                        <div *ngIf="groupedItems['Work Experiences']">
+                                            <h2 class="text-white">Work Experience</h2>
+                                            <table class="table table-condensed table-dark table-borderless mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Title</th>
+                                                    <th scope="col">Subtitle</th>
+                                                    <th scope="col">Details</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr  scope="row" *ngFor="let item of groupedItems['Work Experiences']">
+                                                    <td>{{ item.title[0] }}</td>
+                                                    <td>{{ item.subtitle[0] }}</td>
+                                                    <td>
+                                                    <ul>
+                                                        <li *ngFor="let detail of item.detail">{{ detail }}</li>
+                                                    </ul>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div> <!-- col-12 -->
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- mask -->
+    </div> <!-- bg-image -->
+</section>
+
+
+
+
+
+
+<!-- <h4>---------------------------------------------------------------------------------------------------------------------------</h4>
+<h4>------------------------------------------------ORIGINAL VERSION-----------------------------------------------------</h4>
+<h4>---------------------------------------------------------------------------------------------------------------------------</h4> -->
+
+<!--Search input box and button -->
+<!-- <div class="row justify-content-center">
+    <div class="col-md-6 col-sm-8">
+        <div class="input-group">
+            <input type="search" class="form-control rounded custom-border" placeholder="Search Ann's resume (GPA, Programming Languages)..." aria-label="Search" aria-describedby="search-addon" [(ngModel)]="skill" #filter>
+            <button data-mdb-ripple-init class="btn btn-outline-primary" type="" (click)="filterResults(filter.value)">Search</button>
+        </div>
+    </div>
+</div>
+<br> -->
+<!--Table to show search result -->
+<!-- Show only when the search clicked. -->
+<!-- <div class="container" *ngIf="searchTriggered">
+  <h2>Search Result</h2>
+
+  <table class="table table-condensed" *ngIf="items.length > 0; else noResults">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Title</th>
+        <th>Subtitle</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.type[0] }}</td>
+        <td>{{ item.title[0] }}</td>
+        <td>{{ item.subtitle[0] }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let detail of item.detail">{{ detail }}</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <!-- Show when no result matched. -->
+  <!-- <ng-template #noResults>
+    <p>No match found. Check Ann's <a href="https://github.com/AnnnnnnTseng">GitHub</a>.</p>
+  </ng-template>
+</div> -->
+
+<!-- <h2>Skills</h2>
 <ul>
     <li>Programming Languages: Python, JavaScript, Java, Typescript, C++, R</li>
     <li>Frameworks & Libraries: Express.js, node.js, Svelte, Bootstrap, React, Ionic, AngularJS</li>
@@ -47,7 +243,7 @@
         <ul>Improved student performance and critical thinking by tailoring groupand individual lessons to address specific challenges.</ul>
 
     </li>
-</ul>
+</ul> -->
 
 
 
@@ -56,10 +252,10 @@
 
 
 
-<!-- Test Resume XML -->
-<h1>Test Resume XML</h1>
-<div class="container">
-    <h2>Experience List</h2>
+<!-- Table to show complete resume -->
+
+<!-- <div class="container">
+    <h2>Resume List Original</h2>
     <table class="table table-condensed">
       <thead>
         <tr>
@@ -70,12 +266,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of items">
-          <td>{{ item.type[0] }}</td> <!-- Display the experience type -->
-          <td>{{ item.title[0] }}</td> <!-- Display the title -->
-          <td>{{ item.subtitle[0] }}</td> <!-- Display the subtitle -->
+        <tr *ngFor="let item of originalItems">
+          <td>{{ item.type[0] }}</td> 
+          <td>{{ item.title[0] }}</td>
+          <td>{{ item.subtitle[0] }}</td> 
           <td>
-            <!-- Use ngFor if there are multiple details -->
+
             <ul>
               <li *ngFor="let detail of item.detail">{{ detail }}</li>
             </ul>
@@ -83,4 +279,228 @@
         </tr>
       </tbody>
     </table>
+</div> -->
+
+
+
+<!-- Table to show grouped resume item -->
+    <!-- <div>
+      <ng-container>
+        <div *ngFor="let type of (groupedItems | keyvalue)">
+          <h3>{{ type.key }}</h3> 
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of type.value">
+                <td>{{ item.title[0] }}</td>
+                <td>{{ item.subtitle[0] }}</td>
+                <td>
+                  <ul>
+                    <li *ngFor="let detail of item.detail">{{ detail }}</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-container>
+    </div> -->
+
+<!-- Skill Only table -->
+
+<!-- <div>
+    <h3>Skill speacial table</h3>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Skills</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let skillGroup of (skillCategories | keyvalue)">
+                <td>{{skillGroup.key}}</td>
+                <td>{{skillGroup.value}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div> -->
+<!-- Education only table -->
+<!-- <div *ngIf="groupedItems['Education']">
+    <h3>Education</h3>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of groupedItems['Education']">
+            <td>{{ item.title[0] }}</td>
+            <td>{{ item.subtitle[0] }}</td>
+            <td>
+            <ul>
+                <li *ngFor="let detail of item.detail">{{ detail }}</li>
+            </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<!-- Work Experience Table -->
+<!-- <div *ngIf="groupedItems['Work Experiences']">
+    <h3>Work Experience</h3>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of groupedItems['Work Experiences']">
+            <td>{{ item.title[0] }}</td>
+            <td>{{ item.subtitle[0] }}</td>
+            <td>
+            <ul>
+                <li *ngFor="let detail of item.detail">{{ detail }}</li>
+            </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<!-- Projects Table -->
+<!-- <div *ngIf="groupedItems['Projects']">
+    <h3>Projects</h3>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of groupedItems['Projects']">
+            <td>{{ item.title[0] }}</td>
+            <td>{{ item.subtitle[0] }}</td>
+            <td>
+            <ul>
+                <li *ngFor="let detail of item.detail">{{ detail }}</li>
+            </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!-- table template test black -->
+<!-- <section class="intro">
+  <div class="bg-image h-100" style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/tables/img2.jpg');">
+    <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0,0,0,.25);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="card bg-dark shadow-2-strong">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-dark table-borderless mb-0">
+                    <thead>
+                      <tr>
+                        <th scope="col">EMPLOYEES</th>
+                        <th scope="col">POSITION</th>
+                        <th scope="col">CONTACTS</th>
+                        <th scope="col">AGE</th>
+                        <th scope="col">ADDRESS</th>
+                        <th scope="col">SALARY</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Tiger Nixon</th>
+                        <td>System Architect</td>
+                        <td>tnixon1mple.com</td>
+                        <td>61</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Sonya Frost</th>
+                        <td>Software Engineer</td>
+                        <td>sfrost3ample.com</td>
+                        <td>23</td>
+                        <td>Edinburgh</td>
+                        <td>$103,600</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Jena Gaines</th>
+                        <td>Office Manager</td>
+                        <td>jgaines75ample.com</td>
+                        <td>30</td>
+                        <td>London</td>
+                        <td>$90,560</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Quinn Flynn</th>
+                        <td>Support Lead</td>
+                        <td>qflyn09</td>
+                        <td>22</td>
+                        <td>Edinburgh</td>
+                        <td>$342,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Charde Marshall</th>
+                        <td>Regional Director</td>
+                        <td>cmarshall28example.com</td>
+                        <td>36</td>
+                        <td>San Francisco</td>
+                        <td>$470,600</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Haley Kennedy</th>
+                        <td>Senior Marketing Designer</td>
+                        <td>hkennedy63example.com</td>
+                        <td>43</td>
+                        <td>London</td>
+                        <td>$313,500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Tatyana Fitzpatrick</th>
+                        <td>Regional Director</td>
+                        <td>tfitzpatrick00xample.com</td>
+                        <td>19</td>
+                        <td>Warsaw</td>
+                        <td>$385,750</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section> -->

@@ -1,49 +1,80 @@
-<h1>Ann Tseng's Portfolio</h1>
-<nav>
-  <ul>
-    
-    <!-- <div class="d-flex">
-      <div class="dropdown mr-1">
-        <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-          Draw Down
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset" role="button" >
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+<div class="">
+<!-- New NAv -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand me-auto" href="#" style="color: #9e6de3;">Ann Tseng</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="offcanvas-body">
+          <ul class="navbar-nav mx-auto justify-content-center flex-grow-3 pe-5">
+            <li class="nav-item">
+              <a routerLink="/" routerLinkActive="active" class="nav-link mx-lg-3 active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/about" routerLinkActive="active" class="nav-link mx-lg-3" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/projects" routerLinkActive="active" class="nav-link mx-lg-3" href="#">Project</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a routerLink="/contact" routerLinkActive="active" class="nav-link mx-lg-3" href="#">Contact</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link mx-lg-3" href="https://drive.google.com/file/d/1C962frsuxk284qrHvtk_QO3pCximMNd7/view?usp=sharing">Resume</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li> -->
+          </ul>
         </div>
+
       </div>
-    </div>
-    <div class="btn-group">
-      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Action
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </nav> 
+
+
+
+
+
+
+
+
+
+  <!-- <nav>
+    <ul>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">My Book Shelf</a></li>
+          <li><a class="dropdown-item" href="#">Direction API</a></li>
+          <li><a class="dropdown-item" href="https://github.com/AnnnnnnTseng/Feb23-yelpcamp">Campground Explorer</a></li>
+          <li><a class="dropdown-item" href="https://github.com/AnnnnnnTseng/web‐scraper‐lululemon">Lululemon Web Scraper</a></li>
+          <li><a class="dropdown-item" href="https://github.com/AnnnnnnTseng/Game‐Pets‐Simulator">Pets Simulator Game</a></li>
+        </ul>
       </div>
-    </div> -->
-    <div class="dropdown">
-      <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">My Book Shelf</a></li>
-        <li><a class="dropdown-item" href="#">Direction API</a></li>
-        <li><a class="dropdown-item" href="https://github.com/AnnnnnnTseng/Feb23-yelpcamp">Campground Explorer</a></li>
-        <li><a class="dropdown-item" href="https://github.com/AnnnnnnTseng/web‐scraper‐lululemon">Lululemon Web Scraper</a></li>
-        <li><a class="dropdown-item" href="https://github.com/AnnnnnnTseng/Game‐Pets‐Simulator">Pets Simulator Game</a></li>
-      </ul>
-    </div>
-    <a routerLink="/" routerLinkActive="active">Home</a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
-    <a routerLink="/projects" routerLinkActive="active">Projects</a>
-    <a routerLink="/contact" routerLinkActive="active">Contact</a>
-  </ul>
-  <button>Download My Resume</button>
-</nav>
-<!-- The routed views render in the <router-outlet>-->
-<router-outlet></router-outlet>
+      <a routerLink="/" routerLinkActive="active">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/projects" routerLinkActive="active">Projects</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </ul>
+  </nav> -->
+
+
+  <!-- The routed views render in the <router-outlet>-->
+  <router-outlet></router-outlet>
+</div>
