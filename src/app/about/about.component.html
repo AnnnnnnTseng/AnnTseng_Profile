@@ -7,7 +7,7 @@
         <div class="input-group">
             <br>
             <input type="search" class="form-control rounded custom-border" placeholder="Search Ann's resume (GPA, Programming Languages)..." aria-label="Search" aria-describedby="search-addon" [(ngModel)]="skill" #filter>
-            <button data-mdb-ripple-init class="btn btn-outline-primary" type="button" (click)="filterResults(filter.value)">Search</button>
+            <button data-mdb-ripple-init class="btn btn-outline-primary" type="button" (click)="filterResults(skill)">Search</button>
         </div>
     </div>
 </div>
@@ -166,12 +166,7 @@
 
 
 
-
-
-
-<!-- <h4>---------------------------------------------------------------------------------------------------------------------------</h4>
-<h4>------------------------------------------------ORIGINAL VERSION-----------------------------------------------------</h4>
-<h4>---------------------------------------------------------------------------------------------------------------------------</h4> -->
+<!-- <h4>------------------------------------------------ORIGINAL VERSION-----------------------------------------------------</h4> -->
 
 <!--Search input box and button -->
 <!-- <div class="row justify-content-center">
