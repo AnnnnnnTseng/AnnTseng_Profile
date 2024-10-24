@@ -35,7 +35,7 @@ export class AboutComponent implements OnInit {
       // XML is structured data, and you need it to be 
       // in a JavaScript object format to work with it more easily in Angular.
       // result : the XML string returned from resume.xml
-      // ouput : ouput of paeseString function, meaning the js object version of result
+      // ouput : ouput of parseString function, meaning the js object version of result
       // ouput sample:{
           //   resumeList: {
           //     experience: [
