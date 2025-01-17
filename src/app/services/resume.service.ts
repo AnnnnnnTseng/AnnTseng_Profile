@@ -11,7 +11,7 @@ export class ResumeService {
   constructor(private http: HttpClient) { }
 
   getResume(): Observable<string> {
-  	return this.http.get('assets/resume.xml', {responseType: 'text'})
+  	return this.http.get('assets/resume.txt', {responseType: 'text'})
   }
 
 }

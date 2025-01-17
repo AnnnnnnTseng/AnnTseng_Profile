@@ -25,9 +25,9 @@ export class AboutComponent implements OnInit {
 
   constructor(private resumeService: ResumeService) {}
   public ngOnInit() {
-    console.log("ngOnInit")
+    console.log("Start ngOnInit")
     this.loadResume();
-    console.log("complete ngOnInit")
+    console.log("Complete ngOnInit")
   }
 
   loadResume() {
