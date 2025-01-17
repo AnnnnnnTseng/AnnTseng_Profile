@@ -3,9 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor, NgForOf } from '@angular/common';
 import { ResumeService } from '../services/resume.service';
 
-// const xml2js = require('xml2js');
-
-// import * as xml2js from 'xml2js';
+import * as xml2js from 'xml2js';
 // import { XMLParser } from 'fast-xml-parser';
 
 
@@ -72,43 +70,22 @@ export class AboutComponent implements OnInit {
       //   console.error('Error parsing XML:', err);
       // }
 
-      (async () => {
-        const { parseString } = await import('xml2js');
-      
-        parseString(result, function (err, output) {
-          if (err) {
-            console.error("Error parsing XML:", err);
-            return;
-          }
-          // console.log("output: ", output);
-          // var tmp_originalItems = output.resumeList.experience || [];
-          // console.log('old originalItems:', tmp_originalItems)
-          // var tmp_items = [...tmp_originalItems]; // Store a copy of original data for potential change
-          // console.log('items:', tmp_items)
-  
-          that.originalItems = output.resumeList.experience || [];
-          that.items = [...that.originalItems]; // Store a copy of original data for potential change
-          that.groupItems(); // Group items after loading
-          that.showSkillTable()
-        });
-      })();
+      xml2js.parseString(result, function (err, output) {
+        if (err) {
+          console.error("Error parsing XML:", err);
+          return;
+        }
+        // console.log("output: ", output);
+        // var tmp_originalItems = output.resumeList.experience || [];
+        // console.log('old originalItems:', tmp_originalItems)
+        // var tmp_items = [...tmp_originalItems]; // Store a copy of original data for potential change
+        // console.log('items:', tmp_items)
 
-        // xml2js.parseString(result, function (err, output) {
-        //   if (err) {
-        //     console.error("Error parsing XML:", err);
-        //     return;
-        //   }
-        //   // console.log("output: ", output);
-        //   // var tmp_originalItems = output.resumeList.experience || [];
-        //   // console.log('old originalItems:', tmp_originalItems)
-        //   // var tmp_items = [...tmp_originalItems]; // Store a copy of original data for potential change
-        //   // console.log('items:', tmp_items)
-  
-        //   that.originalItems = output.resumeList.experience || [];
-        //   that.items = [...that.originalItems]; // Store a copy of original data for potential change
-        //   that.groupItems(); // Group items after loading
-        //   that.showSkillTable()
-        // });
+        that.originalItems = output.resumeList.experience || [];
+        that.items = [...that.originalItems]; // Store a copy of original data for potential change
+        that.groupItems(); // Group items after loading
+        that.showSkillTable()
+      });
     });
   }
   
