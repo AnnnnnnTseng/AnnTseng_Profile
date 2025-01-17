@@ -3,8 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor, NgForOf } from '@angular/common';
 import { ResumeService } from '../services/resume.service';
 
-import * as xml2js from 'xml2js';
-// import { XMLParser } from 'fast-xml-parser';
+import { XMLParser } from 'fast-xml-parser';
 
 
 @Component({
@@ -38,7 +37,7 @@ export class AboutComponent implements OnInit {
         ignoreAttributes: false, // Keep attributes if there are any
         trimValues: true,        // Trim whitespace around values
       };
-      // const parser = new XMLParser(parserOptions);
+      const parser = new XMLParser(parserOptions);
       // XML is structured data, and you need it to be 
       // in a JavaScript object format to work with it more easily in Angular.
       // result : the XML string returned from resume.xml
@@ -55,43 +54,44 @@ export class AboutComponent implements OnInit {
           //     ]
           //   }
           // }
-      // try {
-      //   // Parse the XML string into JSON
-      //   const output = parser.parse(result);
-      //   console.log('Parsed JSON:', output);
-      //   // Access the parsed data directly
-      //   that.originalItems = output.resumeList?.experience || [];
-      //   console.log('originalItems:', that.originalItems)
-      //   that.items = [...that.originalItems]; // Store a copy of original data for potential changes
-      //   console.log('items:', that.items)
-      //   that.groupItems(); // Group items after loading
-      //   that.showSkillTable(); // Show the skill table
-      // } catch (err) {
-      //   console.error('Error parsing XML:', err);
-      // }
-
-      xml2js.parseString(result, function (err, output) {
-        if (err) {
-          console.error("Error parsing XML:", err);
-          return;
-        }
-        // console.log("output: ", output);
-        // var tmp_originalItems = output.resumeList.experience || [];
-        // console.log('old originalItems:', tmp_originalItems)
-        // var tmp_items = [...tmp_originalItems]; // Store a copy of original data for potential change
-        // console.log('items:', tmp_items)
-
-        that.originalItems = output.resumeList.experience || [];
-        that.items = [...that.originalItems]; // Store a copy of original data for potential change
+      try {
+        // Parse the XML string into JSON
+        const output = parser.parse(result);
+        console.log('Parsed JSON:', output);
+        // Access the parsed data directly
+        that.originalItems = output.resumeList?.experience || [];
+        console.log('originalItems:', that.originalItems)
+        that.items = [...that.originalItems]; // Store a copy of original data for potential changes
+        console.log('items:', that.items)
         that.groupItems(); // Group items after loading
-        that.showSkillTable()
-      });
+        that.showSkillTable(); // Show the skill table
+      } catch (err) {
+        console.error('Error parsing XML:', err);
+      }
+
+      // xml2js.parseString(result, function (err, output) {
+      //   if (err) {
+      //     console.error("Error parsing XML:", err);
+      //     return;
+      //   }
+      //   // console.log("output: ", output);
+      //   // var tmp_originalItems = output.resumeList.experience || [];
+      //   // console.log('old originalItems:', tmp_originalItems)
+      //   // var tmp_items = [...tmp_originalItems]; // Store a copy of original data for potential change
+      //   // console.log('items:', tmp_items)
+
+      //   that.originalItems = output.resumeList.experience || [];
+      //   that.items = [...that.originalItems]; // Store a copy of original data for potential change
+      //   that.groupItems(); // Group items after loading
+      //   that.showSkillTable()
+      // });
     });
   }
   
   filterResults(text: string) {
     // Mark that the search button has been clicked
     this.searchTriggered = true;
+    const lowercase_text = text.toLocaleLowerCase();
 
     if (!text) {
       this.items = []; // Reset to original if no input
@@ -108,10 +108,10 @@ export class AboutComponent implements OnInit {
         // If any of the title, subtitle, or detail fields contain the search text
         // the function returns true, meaning the item passes the filter 
         // and is included in this.items.
-        item.type[0]?.toLowerCase().includes(text.toLowerCase()) ||
-        item.title[0]?.toLowerCase().includes(text.toLowerCase()) ||
-        item.subtitle[0]?.toLowerCase().includes(text.toLowerCase()) ||
-        item.detail.some((d: string) => d.toLowerCase().includes(text.toLowerCase()))
+        item.type.toLowerCase().includes(lowercase_text) ||
+        item.title.toLowerCase().includes(lowercase_text) ||
+        item.subtitle.toLowerCase().includes(lowercase_text) ||
+        item.detail.toString().split(" ").some((d: string) => d.toLowerCase().includes(lowercase_text))
       );
     });
   }
@@ -119,7 +119,7 @@ export class AboutComponent implements OnInit {
   private groupItems() {
     this.groupedItems = {}
     this.originalItems.forEach(item => {
-      const type = item.type[0];
+      const type = item.type;
       if (!this.groupedItems[type]) {
         this.groupedItems[type] = [];
       }
@@ -136,11 +136,11 @@ export class AboutComponent implements OnInit {
     };
 
     this.originalItems.forEach((item: any) => {
-      const resumeCategory = item.type[0];
+      const resumeCategory = item.type;
 
       if (resumeCategory == "Skills") {
-        const skillType = item.title[0];
-        const skill = item.detail[0];
+        const skillType = item.title;
+        const skill = item.detail;
 
         if (skillType in skillTypes) {
           skillTypes[skillType].push(skill)

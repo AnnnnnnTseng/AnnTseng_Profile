@@ -40,12 +40,12 @@
                                             </thead>
                                             <tbody>
                                                 <tr scope="row" *ngFor="let item of items">
-                                                    <td>{{ item.type[0] }}</td>
-                                                    <td>{{ item.title[0] }}</td>
-                                                    <td>{{ item.subtitle[0] }}</td>
+                                                    <td>{{ item.type }}</td>
+                                                    <td>{{ item.title }}</td>
+                                                    <td>{{ item.subtitle }}</td>
                                                     <td>
                                                         <ul>
-                                                            <li *ngFor="let detail of item.detail">{{ detail }}</li>
+                                                            <li >{{ item.detail }}</li>
                                                         </ul>
                                                     </td>
                                                 </tr>
@@ -105,11 +105,11 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr scope="row" *ngFor="let item of groupedItems['Education']">
-                                                    <td>{{ item.title[0] }}</td>
-                                                    <td>{{ item.subtitle[0] }}</td>
+                                                    <td>{{ item.title }}</td>
+                                                    <td>{{ item.subtitle }}</td>
                                                     <td>
                                                     <ul>
-                                                        <li *ngFor="let detail of item.detail">{{ detail }}</li>
+                                                        <li >{{ item.detail }}</li>
                                                     </ul>
                                                     </td>
                                                 </tr>
@@ -140,11 +140,11 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr  scope="row" *ngFor="let item of groupedItems['Work Experiences']">
-                                                    <td>{{ item.title[0] }}</td>
-                                                    <td>{{ item.subtitle[0] }}</td>
+                                                    <td>{{ item.title }}</td>
+                                                    <td>{{ item.subtitle }}</td>
                                                     <td>
                                                     <ul>
-                                                        <li *ngFor="let detail of item.detail">{{ detail }}</li>
+                                                        <li >{{ item.detail }}</li>
                                                     </ul>
                                                     </td>
                                                 </tr>
