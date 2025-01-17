@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "xml2js"
+            ],
             "outputPath": "dist/ann-tseng-portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
