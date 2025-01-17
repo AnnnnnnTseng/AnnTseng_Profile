@@ -16,8 +16,6 @@ import { XMLParser } from 'fast-xml-parser';
 })
 export class AboutComponent implements OnInit {
   skill: string = '';
-
-
   originalItems: Array<any> = [];
   items: Array<any> = [];
   searchText: string = '';
@@ -26,8 +24,10 @@ export class AboutComponent implements OnInit {
   skillCategories: { [key: string]: any[]} = {}
 
   constructor(private resumeService: ResumeService) {}
-  ngOnInit() {
+  public ngOnInit() {
+    console.log("ngOnInit")
     this.loadResume();
+    console.log("complete ngOnInit")
   }
 
   loadResume() {
