@@ -15,7 +15,7 @@
           "options": {
             "allowedCommonJsDependencies": [
               "xml2js",
-              "boostrap"
+              "bootstrap"
             ],
             "outputPath": "dist/ann-tseng-portfolio",
             "index": "src/index.html",
